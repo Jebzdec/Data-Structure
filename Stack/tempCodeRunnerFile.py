@@ -1,0 +1,2 @@
+
+        ManageStack(k, int(v))
