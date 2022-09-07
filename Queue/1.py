@@ -11,7 +11,7 @@ def func(key, value):
         if q:
             deq.append(q[0])
             print(f'{q[0]} <- ', end='')
-        q = q[1:]
+        q.pop(0)
         if value:
             q.append(value)
 
