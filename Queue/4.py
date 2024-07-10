@@ -40,23 +40,29 @@ for i in question:
         else:
             print(q.pop())
     elif f == 'E' and Id != None:
+        #print(Id, ':', *q.items, end='')
         copy = Queue()
         insert = False
+        found = False
         while not q.isEmpty():
             p = q.pop()
             if employee[p] == employee[Id]:
                 insert = True
+                found = True
             else:
                 if insert == True:
                     copy.push(Id)
+                    insert = False
+
 
             copy.push(p)
 
             if employee[p] == employee[Id] and q.isEmpty() and insert == True:
                 copy.push(Id)
 
-        if insert == False:
+        if found == False:
             copy.push(Id)
         q = copy
+        #print('->', *copy.items)
         # print([i for i in q.items], end=' ')
         # print(insert)

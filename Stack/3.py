@@ -45,6 +45,7 @@ stack = Stack()
 postfix = Postfix()
 
 for i in input:
+    print(*stack.item,sep='')
     if i == '(':
         stack.push(i)
     elif i == ')':
@@ -58,7 +59,8 @@ for i in input:
             while not stack.isEmpty() and operator(stack.peek()) <= operator(i):
                 postfix.push(stack.pop())
             stack.push(i)
-
+    print(*stack.item,sep='')
+    print()
 while not stack.isEmpty():
     postfix.push(stack.pop())
 print('Postfix : ',end='')
